@@ -1,9 +1,13 @@
-import Image from "next/image";
+import Header from "@/components/Header";
+import Menu from "@/components/Menu";
+
 
 export default function Home() {
   return (
-    <div>
-      <h1>Weather</h1>
+    <div className="flex flex-col w-full h-dvh">
+      <Header/>
+      <Menu/>
+      
     </div>
   );
 }
