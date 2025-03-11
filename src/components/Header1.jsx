@@ -1,14 +1,22 @@
 'use client';
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import { IoIosSearch } from "react-icons/io";
 
-
-export default function Header() {
+export default function Header({ fetchWeather, weatherData }) {
     const inputRef = useRef(null);
     const search = () => {
         if(inputRef.current){
             inputRef.current.focus()
         }};
+
+        
+    const [cityName, setCityName] = useState("");
+
+    const handleSearch = (e) => {
+        if(e.key === "Enter"){
+            fetchWeather(cityName);
+        }
+    }
     
     return (
         <div className="flex flex-col bg-[url('/img/background.svg')] bg-cover bg-no-repeat bg-center px-5 text-white rounded-b-4xl " >
@@ -16,6 +24,9 @@ export default function Header() {
                 <input
                 ref={inputRef} 
                 type="text"
+                value={cityName}
+                onChange={(e) => setCityName(e.target.value)}
+                onKeyDown={handleSearch}
                 className="border-none outline-none bg-transparent py-5"/>
                 <IoIosSearch className="text-2xl hover:cursor-pointer" onClick={search} />
 
