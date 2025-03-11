@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 export default function Menu({selectedPage, setSelectedPage}) {
     return (
-        <div className="flex justify-between items-center px-5">
+        <div className="flex justify-between items-center px-3">
             <button 
                 className={`${selectedPage === "today" ? "bg-[#E0B6FF]  rounded-lg" : "bg-white"} py-2 px-6 rounded-lg `} onClick={()=>setSelectedPage("today")}>
                 Today

@@ -16,7 +16,6 @@ export default function Header() {
                 <input
                 ref={inputRef} 
                 type="text"
-                placeholder="Enter a place for search"
                 className="border-none outline-none bg-transparent py-5"/>
                 <IoIosSearch className="text-2xl hover:cursor-pointer" onClick={search} />
 
